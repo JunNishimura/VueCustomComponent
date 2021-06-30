@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+
+import ModalPage from '@/views/ModalPage.vue';
 
 const routes = [
     {
-        path: '/',
-        name: 'Home',
-        component: Home
+        path: '/modal',
+        name: 'ModalPage',
+        component: ModalPage
     },
 ]
 
