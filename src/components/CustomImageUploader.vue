@@ -118,6 +118,16 @@ export default {
     .preview {
         img {
             width: 100%;
+            -webkit-filter: brightness(100%);
+
+            &:hover {
+                -webkit-filter: brightness(61.8%);
+                -webkit-transition: all 0.1618s ease;
+                -moz-transition: all 0.1618s ease;
+                -o-transition: all 0.1618s ease;
+                -ms-transition: all 0.1618s ease;
+                transition: all 0.1618s ease;
+            }
         }
         .delete-btn {
             position: fixed;
@@ -125,23 +135,8 @@ export default {
             right: 15px;
             font-size: 24px;
             font-weight: bold;
-            color: black;
-            background-color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            color: #fff;
             cursor: pointer;
-            
-            span {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            &:hover {
-                background-color: darken($color: #fff, $amount: 16.18%);
-            }
         }
     }
 
