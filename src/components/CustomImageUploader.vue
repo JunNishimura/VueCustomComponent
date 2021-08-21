@@ -1,6 +1,6 @@
 <template>
     <div class="custom-image-uploader">
-        <form @submit="$emit('uploadImage')" method="post" enctype="multipart/form-data">
+        <form @submit.prevent="handleSubmit" method="post"  enctype="multipart/form-data">
             <div class="dragDropArea" :style="{borderColor: borderColor}" 
                 @dragover.prevent="changeDragState(true)" 
                 @dragleave.prevent="changeDragState(false)" 
@@ -39,7 +39,7 @@ export default {
     },
     computed: {
         uploadReady() {
-            return this.preview !== '' ? true : false;
+            return this.preview !== null ? true : false;
         }
     },
     methods: {
@@ -63,6 +63,9 @@ export default {
         },
         deletePreview() {
             this.preview = null;
+        },
+        handleSubmit() {
+            console.log(this.preview)
         }
     },
     watch: {
